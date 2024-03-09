@@ -15,6 +15,9 @@ nixvim.url = "github:Sly-Harvey/nixvim";
 ### Then in your home-manager configuration add this
 ```
 home.packages = with pkgs; [
-    inputs.nixvim.packages.${system}.default
+    { inputs, pkgs, ... }:
+    {
+        inputs.nixvim.packages.${system}.default
+    }
 ]
 ```
