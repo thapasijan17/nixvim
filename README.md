@@ -1,4 +1,4 @@
-# Nixvim template
+# Nixvim
 
 ![Screenshot](./preview.png)
 
