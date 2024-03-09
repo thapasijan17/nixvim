@@ -6,6 +6,9 @@
         fzf-native = {
           enable = true;
         };
+        # project-nvim = {
+        #   enable = true;
+        # };
       };
       defaults = {
         layout_config = {

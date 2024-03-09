@@ -1,6 +1,7 @@
 {
   # Import all your configuration modules here
   imports = [
+    ./core/autocmd.nix
     ./core/options.nix
     ./core/keymaps.nix
     ./core/themes.nix
@@ -8,7 +9,13 @@
   ];
   viAlias = true;
   vimAlias = true;
-  clipboard.register = "unnamedplus";
+  clipboard = {
+    register = "unnamedplus";
+    providers = {
+      wl-copy.enable = true;
+      xclip.enable = true;
+    };
+  };
   globals.mapleader = " ";
 
   # Misc plugins

@@ -1,5 +1,31 @@
 {
   keymaps = [
+    # Useful keymaps
+    {
+      mode = "n";
+      key = "<leader>sr";
+      action = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>";
+      options = {
+        desc = "Rename symbol with regex";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>fy";
+      action = "<CMD> %y <CR>";
+      options = {
+        desc = "Yank file contents";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>fp";
+      action = "<CMD> %d_<CR>Vp";
+      options = {
+        desc = "Paste file contents";
+      };
+    }
+    
     # Window navigation
     {
       mode = "n";
@@ -34,6 +60,7 @@
       };
     }
 
+    # Buffer
     {
       mode = "n";
       key = "<leader>bd";
