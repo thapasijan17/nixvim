@@ -6,6 +6,7 @@
     cmp-path = { enable = true; };
     cmp_luasnip = { enable = true; };
     cmp-cmdline = { enable = false; };
+    nix.enable = true;
     cmp = {
       enable = true;
       settings = {
