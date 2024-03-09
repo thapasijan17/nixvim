@@ -1,17 +1,20 @@
 # Nixvim template
 
-This template gives you a good starting point for configuring nixvim standalone.
+![Screenshot](./preview.png)
 
-## Configuring
-
-To start configuring, just add or modify the nix files in `./config`.
-If you add a new configuration file, remember to add it to the
-[`config/default.nix`](./config/default.nix) file
-
-## Testing your new configuration
-
-To test your configuration simply run the following command
-
+## Run
+```bash
+nix run github:Sly-Harvey/nixvim
 ```
-nix run .
+
+## Install on NixOS
+### Add this to your flake.nix
+```
+nixvim.url = "github:Sly-Harvey/nixvim";
+```
+### Then in your home-manager configuration add this
+```
+home.packages = with pkgs; [
+    inputs.nixvim.packages.${system}.default
+]
 ```

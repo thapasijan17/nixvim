@@ -28,16 +28,12 @@
           action = "command_history, {}";
           desc = "Command History";
         };
-        "<leader>b" = {
-          action = "buffers, {}";
-          desc = "+buffer";
-        };
         "<leader>ff" = {
           action = "find_files, {}";
           desc = "Find project files";
         };
         "<leader>fr" = {
-          action = "live_grep, {}";
+          action = "oldfiles, {}";
           desc = "Find text";
         };
         "<leader>fR" = {
@@ -45,7 +41,7 @@
           desc = "Resume";
         };
         "<leader>fg" = {
-          action = "oldfiles, {}";
+          action = "live_grep, {}";
           desc = "Recent";
         };
         "<leader>fb" = {
