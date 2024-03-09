@@ -12,7 +12,7 @@
   plugins = {
     nvim-tree = {
       enable = true;
-      autoClose = true;
+      autoClose = false;
       openOnSetup = true;
       view = {
         side = "left";

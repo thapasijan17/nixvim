@@ -25,6 +25,8 @@
         "_darcs"
         "!>home"
         "!=tmp"
+        "flake.nix"
+        "flake.lock"
         "Cargo.toml"
         "CMakeLists.txt"
         "Makefile"
