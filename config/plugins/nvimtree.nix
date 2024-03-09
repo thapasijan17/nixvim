@@ -14,6 +14,9 @@
       enable = true;
       autoClose = false;
       openOnSetup = true;
+      actions = {
+        openFile.quitOnOpen = true;
+      };
       view = {
         side = "left";
         signcolumn = "no";

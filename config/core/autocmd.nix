@@ -4,6 +4,7 @@
     "bufcheck" = {clear = true;};
     "large_buf" = {clear = true;};
     "close-with-q" = {clear = true;};
+    "auto_open_nvimtree" = {clear = true;};
     "alpha_autostart" = {clear = true;};
     "wrap_spell" = {clear = true;};
     "terminal_settings" = {clear = true;};
@@ -112,6 +113,28 @@
               end
             end
             if should_skip then return end
+          end
+        '';
+      };
+    }
+    {
+      event = "VimEnter";
+      group = "auto_open_nvimtree";
+      callback = {
+        __raw = ''
+          function(data)
+            -- buffer is a directory
+            local directory = vim.fn.isdirectory(data.file) == 1
+
+            if not directory then
+              return
+            end
+
+            -- change to the directory
+            vim.cmd.cd(data.file)
+
+            -- open the tree
+            require("nvim-tree.api").tree.open()
           end
         '';
       };
