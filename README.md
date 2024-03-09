@@ -3,7 +3,7 @@
 ![Screenshot](./preview.png)
 
 ## Run
-```bash
+```Nix
 nix run github:Sly-Harvey/nixvim
 ```
 
