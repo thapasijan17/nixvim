@@ -1,7 +1,12 @@
 {
   # Import all your configuration modules here
   imports = [
-    ./options.nix
+    ./core/options.nix
+    ./core/themes.nix
     ./plugins
   ];
+  viAlias = true;
+  vimAlias = true;
+  clipboard.register = "unnamedplus";
+  globals.mapleader = " ";
 }
