@@ -1,3 +1,4 @@
+{pkgs, ...}:
 {
   # Import all your configuration modules here
   imports = [
@@ -29,4 +30,19 @@
       enable = true;
     };
   };
+  extraPackages = with pkgs; [
+    ripgrep
+    tmux-sessionizer
+    # Debuggers / misc deps
+    asm-lsp
+    bashdb
+    clang-tools
+    delve
+    fd
+    gdb
+    go
+    lldb_17
+    llvmPackages_17.bintools-unwrapped
+    marksman
+  ];
 }
