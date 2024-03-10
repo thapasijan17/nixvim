@@ -12,32 +12,33 @@
   extraPlugins = with pkgs.vimPlugins; [
     nvim-gdb
   ];
-  keymaps = [
-    {
-      mode = "n";
-      action = ":lua require('dap').continue()<CR>";
-      key = "<F5>";
-      options = {
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      action = ":lua require('dap').terminate()<CR>";
-      key = "<S-F5>";
-      options = {
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      action = ":lua require('dap').terminate()<CR>";
-      key = "<F17>";
-      options = {
-        silent = true;
-      };
-    }
-  ];
+  # STILL TESTING
+  # keymaps = [
+  #   {
+  #     mode = [ "n" "i" "v" "x" "t" ];
+  #     action = ":lua require('dap').continue()<CR>";
+  #     key = "<F5>";
+  #     options = {
+  #       silent = true;
+  #     };
+  #   }
+  #   {
+  #     mode = [ "n" "i" "v" "x" ];
+  #     action = ":lua require('dap').terminate()<CR>";
+  #     key = "<S-F5>";
+  #     options = {
+  #       silent = true;
+  #     };
+  #   }
+  #   {
+  #     mode = [ "n" "i" "v" "x" ];
+  #     action = ":lua require('dap').terminate()<CR>";
+  #     key = "<F17>";
+  #     options = {
+  #       silent = true;
+  #     };
+  #   }
+  # ];
   extraConfigLua = ''
        local dap, dapui = require("dap"), require("dapui")
        dap.listeners.before.attach.dapui_config = function()
@@ -55,6 +56,45 @@
 
       local dap = require('dap')
       dap.set_log_level('DEBUG')
+
+      vim.keymap.set({'n', 'i', 'v', 'x'}, '<F17>', function()
+        vim.cmd('stopinsert')
+        dap.terminate()
+      end)
+
+      vim.keymap.set({'n', 'i', 'v', 'x'}, '<S-F5>', function()
+        vim.cmd('stopinsert')
+        dap.terminate()
+      end)
+    
+      -- vim.keymap.set('n', '<C-b>', build_project)
+      vim.keymap.set({'n', 'i', 'v', 'x', 't'}, '<F5>', function()
+        require("nvim-tree.api").tree.close()
+
+        if vim.fn.has("toggleterm") then
+          local terms = require("toggleterm.terminal")
+          local terminals = terms.get_all()
+          for _, term_num in pairs(terminals) do
+            term_num:close()
+          end
+        elseif vim.fn.has("FTerm") then
+          require('FTerm').close()
+        end
+
+        vim.cmd('startinsert')
+        dap.continue()
+      end)
+
+      vim.keymap.set('n', '<Leader>dt', function() dapui.toggle() end)
+      vim.keymap.set('n', '<leader>b', function() dap.toggle_breakpoint() end)
+      vim.keymap.set('n', '<F10>', function() dap.step_over() end)
+      vim.keymap.set('n', '<F11>', function() dap.step_into() end)
+      vim.keymap.set('n', '<F12>', function() dap.step_out() end)
+      vim.keymap.set('i', '<F10>', function() dap.step_over() end)
+      vim.keymap.set('i', '<F11>', function() dap.step_into() end)
+      vim.keymap.set('i', '<F12>', function() dap.step_out() end)
+      vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end)
+      vim.keymap.set('n', '<Leader>dl', function() dap.run_last() end)
 
       dap.adapters.lldb = {
           type = 'executable',
