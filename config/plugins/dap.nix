@@ -96,17 +96,27 @@
       vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end)
       vim.keymap.set('n', '<Leader>dl', function() dap.run_last() end)
 
+      dap.adapters.gdb = {
+              type = "executable",
+              command = "gdb",
+              args = { "-q", "-i", "dap" }
+      }
       dap.adapters.lldb = {
           type = 'executable',
           command = '${pkgs.lldb_17}/bin/lldb-vscode', -- adjust as needed, must be absolute path
           name = 'lldb'
       }
 
-      local dap = require("dap")
-      dap.adapters.gdb = {
-          type = "executable",
-          command = "gdb",
-          args = { "-i", "dap" }
+      dap.adapters.codelldb = {
+        type = 'server',
+        port = "''${port}",
+        executable = {
+          command = '${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb',
+          args = {"--port", "''${port}"},
+      
+          -- On windows you may have to uncomment this:
+          -- detached = false,
+        }
       }
 
       local dap = require("dap")
