@@ -6,7 +6,7 @@
     ./cmp.nix
     ./cursorline.nix
     ./dap.nix
-    #./format.nix
+    ./format.nix
     ./git.nix
     ./lsp.nix
     ./lualine.nix

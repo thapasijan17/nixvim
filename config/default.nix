@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   # Import all your configuration modules here
   imports = [
     ./core/autocmd.nix
@@ -59,5 +58,19 @@
     lldb_17
     llvmPackages_17.bintools-unwrapped
     marksman
+    # Linters
+    commitlint
+    eslint_d
+    golangci-lint
+    hadolint
+    html-tidy
+    luajitPackages.luacheck
+    markdownlint-cli
+    nodePackages.jsonlint
+    pylint
+    ruff
+    shellcheck
+    vale
+    yamllint
   ];
 }

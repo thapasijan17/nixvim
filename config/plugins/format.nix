@@ -1,4 +1,15 @@
 {pkgs, ...}: {
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>fm";
+      action = "<CMD>lua require('conform').format({ aync = true, lsp_fallback = true })<CR>";
+      options = {
+        desc = "Format buffer";
+      };
+    }
+  ];
   plugins.conform-nvim = {
     enable = true;
     formattersByFt = {
@@ -28,10 +39,10 @@
         stdin = true;
       };
     };
-    formatOnSave = {
-      lspFallback = true;
-      timeoutMs = 2000;
-    };
+    #formatOnSave = {
+    #  lspFallback = true;
+    #  timeoutMs = 2000;
+    #};
   };
 
   extraConfigLuaPre = ''
