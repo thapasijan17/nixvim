@@ -14,7 +14,8 @@
         nil_ls.enable = true;
         pyright.enable = true;
         bashls.enable = true;
-        ccls.enable = true;
+        #ccls.enable = true;
+        clangd.enable = true;
         cmake.enable = true;
         csharp-ls.enable = true;
         gopls.enable = true;

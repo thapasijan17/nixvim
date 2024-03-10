@@ -11,6 +11,7 @@
     ./git.nix
     ./lsp.nix
     ./lualine.nix
+    ./lint.nix
     ./noice.nix
     ./nvimtree.nix
     ./telescope.nix
