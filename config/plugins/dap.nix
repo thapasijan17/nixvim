@@ -12,6 +12,32 @@
   extraPlugins = with pkgs.vimPlugins; [
     nvim-gdb
   ];
+  keymaps = [
+    {
+      mode = "n";
+      action = ":lua require('dap').continue()<CR>";
+      key = "<F5>";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      action = ":lua require('dap').terminate()<CR>";
+      key = "<S-F5>";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      action = ":lua require('dap').terminate()<CR>";
+      key = "<F17>";
+      options = {
+        silent = true;
+      };
+    }
+  ];
   extraConfigLua = ''
        local dap, dapui = require("dap"), require("dapui")
        dap.listeners.before.attach.dapui_config = function()

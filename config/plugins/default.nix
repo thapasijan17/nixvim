@@ -5,6 +5,7 @@
     ./bufferline.nix
     ./cmp.nix
     ./cursorline.nix
+    ./dap.nix
     ./git.nix
     ./lsp.nix
     ./lualine.nix
