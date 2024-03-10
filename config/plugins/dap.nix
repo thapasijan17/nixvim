@@ -70,6 +70,17 @@
       }
 
       local dap = require("dap")
+      dap.configurations.cpp = {
+    	{
+    		name = "Launch",
+    		type = "gdb",
+    		request = "launch",
+    		program = function()
+    			return vim.fn.input('Path of the executable: ', vim.fn.getcwd() .. '/', 'file')
+    		end,
+    		cwd = "''${workspaceFolder}",
+    	},
+      }
       dap.configurations.c = {
     	{
     		name = "Launch",
@@ -89,10 +100,14 @@
     		type = 'lldb',
     		request = 'launch',
     		program = function()
-    			return vim.fn.input('Path of the executable: ', vim.fn.getcwd() .. '/', 'file')
+                        require("nvim-tree.api").tree.close()
+                        vim.cmd('startinsert')
+                        return vim.fn.getcwd() .. '/target/debug/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+    			-- return vim.fn.input('Path of the executable: ', vim.fn.getcwd() .. '/', 'file')
     		end,
     		cwd = "''${workspaceFolder}",
     		stopOnEntry = false,
+                showDisassembly = "never",
     		args = {},
     	},
     }
