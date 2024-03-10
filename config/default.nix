@@ -33,6 +33,21 @@
   extraPackages = with pkgs; [
     ripgrep
     tmux-sessionizer
+    # Formatters
+    alejandra
+    asmfmt
+    astyle
+    black
+    cmake-format
+    gofumpt
+    golines
+    gotools
+    isort
+    nodePackages.prettier
+    prettierd
+    rustfmt
+    shfmt
+    stylua
     # Debuggers / misc deps
     asm-lsp
     bashdb

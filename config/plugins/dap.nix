@@ -81,8 +81,9 @@
           require('FTerm').close()
         end
 
-        vim.cmd('startinsert')
+        -- vim.cmd('startinsert')
         dap.continue()
+        vim.cmd('stopinsert')
       end)
 
       vim.keymap.set('n', '<Leader>dt', function() dapui.toggle() end)
@@ -147,7 +148,7 @@
       dap.configurations.rust = {
     	{
     		name = 'Launch',
-    		type = 'lldb',
+    		type = 'codelldb',
     		request = 'launch',
     		program = function()
                         require("nvim-tree.api").tree.close()
