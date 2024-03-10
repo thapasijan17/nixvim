@@ -82,7 +82,7 @@
             (
               mkButton
               "cf"
-              ":e ~/NixOS/home/programs/nixvim/defaul.nix<CR>"
+              ":e /etc/nixos/flake.nix<CR>"
               "  Configuration"
             )
             (
