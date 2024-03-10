@@ -43,9 +43,11 @@
        local dap, dapui = require("dap"), require("dapui")
        dap.listeners.before.attach.dapui_config = function()
        	dapui.open()
+        dap.repl.close()
        end
        dap.listeners.before.launch.dapui_config = function()
        	dapui.open()
+        dap.repl.close()
        end
        dap.listeners.before.event_terminated.dapui_config = function()
        	dapui.close()
@@ -69,21 +71,51 @@
     
       -- vim.keymap.set('n', '<C-b>', build_project)
       vim.keymap.set({'n', 'i', 'v', 'x', 't'}, '<F5>', function()
-        require("nvim-tree.api").tree.close()
-
-        if vim.fn.has("toggleterm") then
-          local terms = require("toggleterm.terminal")
-          local terminals = terms.get_all()
-          for _, term_num in pairs(terminals) do
-            term_num:close()
+        if vim.fn.empty(vim.fn.glob("CMakeLists.txt")) == 0 then
+          local job = require('cmake').configure()
+          if job then
+            job:after(vim.schedule_wrap(
+              function(_, exit_code)
+                if exit_code == 0 then
+                  vim.cmd("CMake select_target")
+                  -- require('FTerm').close()
+                  require("nvim-tree.api").tree.close()
+                  if vim.fn.has("toggleterm") then
+                    local terms = require("toggleterm.terminal")
+                    local terminals = terms.get_all()
+                    for _, term_num in pairs(terminals) do
+                      term_num:close()
+                    end
+                  elseif vim.fn.has("FTerm") then
+                    require('FTerm').close()
+                  end
+                  vim.cmd('startinsert')
+                  vim.cmd("CMake build_and_debug")
+                  dap.repl.close()
+                else
+                  vim.notify("Target debug failed", vim.log.levels.ERROR, { title = 'CMake' })
+                end
+              end
+            ))
           end
-        elseif vim.fn.has("FTerm") then
-          require('FTerm').close()
-        end
+        else
+          -- require("toggleterm").exec('exit')
+          -- require('FTerm').close()
+          require("nvim-tree.api").tree.close()
 
-        -- vim.cmd('startinsert')
-        dap.continue()
-        vim.cmd('stopinsert')
+          if vim.fn.has("toggleterm") then
+            local terms = require("toggleterm.terminal")
+            local terminals = terms.get_all()
+            for _, term_num in pairs(terminals) do
+              term_num:close()
+            end
+          elseif vim.fn.has("FTerm") then
+            require('FTerm').close()
+          end
+
+          vim.cmd('startinsert')
+          dap.continue()
+        end
       end)
 
       vim.keymap.set('n', '<Leader>dt', function() dapui.toggle() end)

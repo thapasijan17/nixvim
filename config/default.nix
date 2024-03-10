@@ -29,6 +29,17 @@
       enable = true;
     };
   };
+  #extraPlugins = [
+  #  (pkgs.vimUtils.buildVimPlugin {
+  #    name = "nixvim-plenary";
+  #    src = pkgs.fetchFromGitHub {
+  #      owner = "nvim-lua";
+  #      repo = "plenary.nvim";
+  #      rev = "f7adfc4b3f4f91aab6caebf42b3682945fbc35be";
+  #      hash = "sha256-/ltkFqa5MTAI9z8oLv7+5SJ/Qq9l1kkuKGD955NbLi8=";
+  #    };
+  #  })
+  #];
   extraPackages = with pkgs; [
     ripgrep
     tmux-sessionizer
