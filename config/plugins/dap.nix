@@ -6,7 +6,7 @@
       dap-ui.enable = true;
       dap-virtual-text.enable = true;
       dap-go.enable = true;
-      #dap-python.enable = true; # suspected of making nixos-rebuild hang
+      dap-python.enable = true;
     };
   };
   extraPlugins = with pkgs.vimPlugins; [
