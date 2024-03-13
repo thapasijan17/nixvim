@@ -42,7 +42,7 @@
   colorschemes.base16 = {
       enable = false;
       # colorscheme = "material-darker";
-      customColorScheme = {
+      colorscheme = {
           base00 = "#101317";
           base01 = "#1a1d21";
           base02 = "#23262a";
