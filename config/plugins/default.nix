@@ -10,6 +10,7 @@
     ./dap.nix
     ./format.nix
     ./git.nix
+    ./hop.nix
     ./lsp.nix
     ./lualine.nix
     ./lint.nix
