@@ -2,6 +2,7 @@
   plugins = {
     project-nvim = {
       enable = true;
+      enableTelescope = true;
       detectionMethods = [
         "lsp"
         "pattern"
