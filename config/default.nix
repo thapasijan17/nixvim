@@ -1,10 +1,7 @@
 {pkgs, ...}: {
   # Import all your configuration modules here
   imports = [
-    ./core/autocmd.nix
-    ./core/options.nix
-    ./core/keymaps.nix
-    ./core/themes.nix
+    ./core
     ./plugins
   ];
   viAlias = true;

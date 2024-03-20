@@ -25,7 +25,7 @@
         desc = "Paste file contents";
       };
     }
-    
+
     # Window navigation
     {
       mode = "n";

@@ -4,9 +4,9 @@
       enable = true;
       #iconsEnabled = true;
       globalstatus = true;
-      extensions = [ "nvim-tree" "nvim-dap-ui" "toggleterm" "quickfix" ];
+      extensions = ["nvim-tree" "nvim-dap-ui" "toggleterm" "quickfix"];
       disabledFiletypes = {
-        statusline = [ "dashboard" "alpha" ];
+        statusline = ["dashboard" "alpha"];
       };
       sectionSeparators.left = "";
       sectionSeparators.right = "";

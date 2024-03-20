@@ -23,7 +23,7 @@
               timeout = 40,
             })
           end
-          '';
+        '';
       };
     }
     {
@@ -80,7 +80,8 @@
       event = "FileType";
       group = "wrap_spell";
       pattern = [
-        "gitcommit" "markdown"
+        "gitcommit"
+        "markdown"
       ];
       callback = {
         __raw = ''

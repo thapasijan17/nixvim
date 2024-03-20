@@ -33,17 +33,20 @@
             spacing = 1;
           };
           type = "group";
-          val = 
-            let
+          val = let
             mkButton = shortcut: cmd: val: {
               type = "button";
               inherit val;
               opts = {
                 keymap = [
                   "n"
-                    shortcut
-                    cmd
-                    { }
+                  shortcut
+                  cmd
+                  {
+                    noremap = true;
+                    silent = true;
+                    nowait = true;
+                  }
                 ];
                 shortcut = shortcut;
                 position = "center";
@@ -53,8 +56,7 @@
                 hl = "AlphaButtons";
               };
             };
-          in
-          [
+          in [
             (
               mkButton
               "ff"

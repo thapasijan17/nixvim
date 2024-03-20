@@ -6,7 +6,7 @@
       servers = {
         rust-analyzer = {
           enable = true;
-          settings = { diagnostics.enable = true; };
+          settings = {diagnostics.enable = true;};
           installRustc = true;
           installCargo = true;
         };
@@ -20,7 +20,7 @@
         csharp-ls.enable = true;
         gopls.enable = true;
         jsonls.enable = true;
-        terraformls = { enable = true; };
+        terraformls = {enable = true;};
       };
       keymaps = {
         silent = true;

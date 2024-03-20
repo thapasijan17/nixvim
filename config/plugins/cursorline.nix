@@ -9,7 +9,7 @@
       };
       cursorword = {
         enable = true;
-        hl = { underline = true; };
+        hl = {underline = true;};
       };
     };
   };

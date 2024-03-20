@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   plugins.dap = {
     enable = true;
     extensions = {
@@ -68,7 +67,7 @@
         vim.cmd('stopinsert')
         dap.terminate()
       end)
-    
+
       -- vim.keymap.set('n', '<C-b>', build_project)
       vim.keymap.set({'n', 'i', 'v', 'x', 't'}, '<F5>', function()
         if vim.fn.empty(vim.fn.glob("CMakeLists.txt")) == 0 then
@@ -146,7 +145,7 @@
         executable = {
           command = '${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb',
           args = {"--port", "''${port}"},
-      
+
           -- On windows you may have to uncomment this:
           -- detached = false,
         }
