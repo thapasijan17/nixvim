@@ -5,6 +5,7 @@
     ./bufferline.nix
     ./cmp.nix
     ./cmake.nix
+    ./comment.nix
     ./cursorline.nix
     ./dap.nix
     ./format.nix
