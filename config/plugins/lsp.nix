@@ -11,8 +11,11 @@
           installCargo = true;
         };
         lua-ls.enable = true;
+        yamlls.enable = true;
         nil_ls.enable = true;
-        pyright.enable = true;
+        marksman.enable = true;
+        pylsp.enable = true;
+        #pyright.enable = true;
         bashls.enable = true;
         #ccls.enable = true;
         clangd.enable = true;
@@ -21,6 +24,12 @@
         gopls.enable = true;
         jsonls.enable = true;
         terraformls = {enable = true;};
+        ansiblels.enable = true;
+
+        # Web development
+        # tsserver.enable = true;
+        # html.enable = true;
+        # volar.enable = true;
       };
       keymaps = {
         silent = true;

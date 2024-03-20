@@ -2,6 +2,7 @@
   # Import all your configuration modules here
   imports = [
     ./core
+    ./themes
     ./plugins
   ];
   viAlias = true;
@@ -18,6 +19,9 @@
   # Misc plugins
   plugins = {
     nvim-autopairs.enable = true;
+    lastplace.enable = true;
+    # surround.enable = true;
+    # commentary.enable = true;
     which-key = {
       enable = true;
       showKeys = true;
@@ -26,17 +30,6 @@
       enable = true;
     };
   };
-  #extraPlugins = [
-  #  (pkgs.vimUtils.buildVimPlugin {
-  #    name = "nixvim-plenary";
-  #    src = pkgs.fetchFromGitHub {
-  #      owner = "nvim-lua";
-  #      repo = "plenary.nvim";
-  #      rev = "f7adfc4b3f4f91aab6caebf42b3682945fbc35be";
-  #      hash = "sha256-/ltkFqa5MTAI9z8oLv7+5SJ/Qq9l1kkuKGD955NbLi8=";
-  #    };
-  #  })
-  #];
   extraPackages = with pkgs; [
     ripgrep
     tmux-sessionizer
@@ -68,7 +61,7 @@
     marksman
     # Linters
     commitlint
-    eslint_d
+    # eslint_d
     golangci-lint
     hadolint
     html-tidy
@@ -77,7 +70,7 @@
     nodePackages.jsonlint
     pylint
     ruff
-    shellcheck
+    # shellcheck
     vale
     yamllint
   ];

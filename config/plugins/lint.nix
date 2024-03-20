@@ -2,22 +2,28 @@
   plugins.lint = {
     enable = true;
     lintersByFt = {
+      #text = [ "write_good" ];
+      markdownlint = ["markdownlint"];
       c = ["clangtidy"];
       cpp = ["clangtidy"];
-      css = ["eslint_d"];
+      # css = ["eslint_d"];
       gitcommit = ["commitlint"];
       go = ["golangcilint"];
-      javascript = ["eslint_d"];
-      javascriptreact = ["eslint_d"];
+      # javascript = ["eslint_d"];
+      # javascriptreact = ["eslint_d"];
       json = ["jsonlint"];
       lua = ["luacheck"];
-      markdownlint = ["markdownlint"];
       nix = ["nix"];
       python = ["ruff"];
-      sh = ["shellcheck"];
-      typescript = ["eslint_d"];
-      typescriptreact = ["eslint_d"];
+      # sh = ["shellcheck"];
+      # typescript = ["eslint_d"];
+      # typescriptreact = ["eslint_d"];
       yaml = ["yamllint"];
+    };
+    linters = {
+      write_good = {
+        cmd = "${pkgs.write-good}/bin/write-good";
+      };
     };
   };
   extraConfigLua = ''

@@ -25,6 +25,11 @@
         desc = "Paste file contents";
       };
     }
+    {
+      mode = "n";
+      key = "<ESC>";
+      action = "<CMD>nohlsearch<CR>";
+    }
 
     # Window navigation
     {

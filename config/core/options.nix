@@ -16,7 +16,7 @@
     hlsearch = true;
     incsearch = true;
 
-    wrap = true;
+    wrap = false;
 
     splitbelow = true;
     splitright = true;
@@ -32,8 +32,8 @@
     updatetime = 50;
     completeopt = [ "menuone" "noselect" "noinsert" ];
 
-    swapfile = false;
-    backup = false;
+    # swapfile = false;
+    # backup = false;
     undofile = true;
 
     # Enable 24-bit colors 
