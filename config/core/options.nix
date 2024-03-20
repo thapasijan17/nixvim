@@ -1,71 +1,70 @@
 {
-  # TEMP embedded lua because nix options are not working well at the moment
-  extraConfigLua = ''
-    vim.opt.number = true
-    vim.opt.relativenumber = true
+  config.options = {
+    number = true;
+    relativenumber = true;
 
-    vim.opt.tabstop = 2
-    vim.opt.softtabstop = 2
-    vim.opt.showtabline = 2
-    vim.opt.expandtab = true
+    tabstop = 2;
+    softtabstop = 2;
+    showtabline = 2;
+    expandtab = true;
 
-    vim.opt.smartindent = true
-    vim.opt.shiftwidth = 2
+    smartindent = true;
+    shiftwidth = 2;
 
-    vim.opt.breakindent = true
+    breakindent = true;
 
-    vim.opt.hlsearch = true
-    vim.opt.incsearch = true
+    hlsearch = true;
+    incsearch = true;
 
-    vim.opt.wrap = true
+    wrap = true;
 
-    vim.opt.splitbelow = true
-    vim.opt.splitright = true
+    splitbelow = true;
+    splitright = true;
 
-    vim.opt.mouse = "a"
+    mouse = "a";
 
-    vim.opt.ignorecase = true
-    vim.opt.smartcase = true
-    vim.opt.grepprg = "rg --vimgrep"
-    vim.opt.grepformat = "%f:%l:%c:%m"
+    ignorecase = true;
+    smartcase = true;
+    grepprg = "rg --vimgrep";
+    grepformat = "%f:%l:%c:%m";
 
-    -- Much better completions
-    vim.opt.updatetime = 50
-    vim.opt.completeopt = {"menuone", "noselect", "noinsert"}
+    # Much better completions
+    updatetime = 50;
+    completeopt = [ "menuone" "noselect" "noinsert" ];
 
-    vim.opt.swapfile = false
-    vim.opt.backup = false
-    vim.opt.undofile = true
+    swapfile = false;
+    backup = false;
+    undofile = true;
 
-    -- Enable 24-bit colors
-    vim.opt.termguicolors = true
+    # Enable 24-bit colors 
+    termguicolors = true;
 
-    vim.opt.signcolumn = "yes"
+    signcolumn = "yes";
 
-    vim.opt.cursorline = true -- Highlight the line where the cursor is located
+    cursorline = true; # Highlight the line where the cursor is located
 
-    -- Set fold settings
-    -- These options were reccommended by nvim-ufo
-    -- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
-    vim.opt.foldcolumn = "0"
-    vim.opt.foldlevel = 99
-    vim.opt.foldlevelstart = 99
-    vim.opt.foldenable = true
+    # Set fold settings
+    # These options were reccommended by nvim-ufo
+    # See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
+    foldcolumn = "0";
+    foldlevel = 99;
+    foldlevelstart = 99;
+    foldenable = true;
 
-    -- Always keep 8 lines above/below cursor unless at start/end of file
-    vim.opt.scrolloff = 8
+    # Always keep 8 lines above/below cursor unless at start/end of file
+    scrolloff = 8;
 
-    -- Place a column line
-    -- vim.opt.colorcolumn = "80"
+    # Place a column line
+    # colorcolumn = "80";
 
-    -- Reduce which-key timeout to 10ms
-    vim.opt.timeoutlen = 10
+    # Reduce which-key timeout to 10ms
+    timeoutlen = 10;
 
-    -- Set encoding type
-    vim.opt.encoding = "utf-8"
-    vim.opt.fileencoding = "utf-8"
+    # Set encoding type
+    encoding = "utf-8";
+    fileencoding = "utf-8";
 
-    -- vim.opt.cmdheight = 0
-    -- vim.opt.showmode = false
-  '';
+    # cmdheight = 0;
+    # showmode = false;
+  };
 }
