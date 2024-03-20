@@ -1,5 +1,5 @@
 {
-  options = {
+  globalOptions = {
     number = true;
     relativenumber = true;
 
@@ -30,13 +30,13 @@
 
     # Much better completions
     updatetime = 50;
-    completeopt = [ "menuone" "noselect" "noinsert" ];
+    completeopt = ["menuone" "noselect" "noinsert"];
 
     swapfile = false;
     backup = false;
     undofile = true;
 
-    # Enable 24-bit colors 
+    # Enable 24-bit colors
     termguicolors = true;
 
     signcolumn = "yes";
