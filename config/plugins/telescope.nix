@@ -6,6 +6,9 @@
         fzf-native = {
           enable = true;
         };
+        ui-select = {
+          enable = true;
+        };
       };
       defaults = {
         layout_config = {
@@ -14,6 +17,36 @@
           };
         };
         sorting_strategy = "ascending";
+        mappings = {
+          i = {
+            "<esc>" = "close";
+            "<S-j>" = "move_selection_next";
+            "<S-k>" = "move_selection_previous";
+            "<C-j>" = "move_selection_next";
+            "<C-k>" = "move_selection_previous";
+          };
+        };
+      };
+      extraOptions = {
+        pickers = {
+          buffers = {
+            # sort_lastused = true;
+            previewer = false;
+
+            layout_config = {
+              width = 0.3;
+              height = 0.4;
+            };
+            mappings = {
+              "i" = {
+                "<C-D>" = "delete_buffer";
+              };
+              "n" = {
+                "dd" = "delete_buffer";
+              };
+            };
+          };
+        };
       };
       keymaps = {
         "<leader><space>" = {
@@ -108,7 +141,7 @@
           action = "resume, {}";
           desc = "Resume";
         };
-        "<leader>uC" = {
+        "<leader>cs" = {
           action = "colorscheme, {}";
           desc = "Colorscheme preview";
         };
