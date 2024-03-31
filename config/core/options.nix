@@ -1,5 +1,5 @@
 {
-  config.options = {
+  config.opts = {
     number = true;
     relativenumber = true;
 
