@@ -37,6 +37,7 @@
             mkButton = shortcut: cmd: val: {
               type = "button";
               inherit val;
+              on_press.raw = "funcion() vim.cmd[[${cmd}]] end";
               opts = {
                 keymap = [
                   "n"

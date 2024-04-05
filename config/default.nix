@@ -30,6 +30,17 @@
       enable = true;
     };
   };
+  extraPlugins = [
+   (pkgs.vimUtils.buildVimPlugin {
+     name = "nvim-nio";
+     src = pkgs.fetchFromGitHub {
+       owner = "nvim-neotest";
+       repo = "nvim-nio";
+       rev = "5800f585def265d52f1d8848133217c800bcb25d";
+       hash = "sha256-ZRYclqsgAvlRBwb59XHlqVat7CxUJTH1rD6QLwh1ang=";
+     };
+   })
+  ];
   extraPackages = with pkgs; [
     ripgrep
     tmux-sessionizer
