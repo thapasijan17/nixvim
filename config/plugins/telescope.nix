@@ -10,24 +10,24 @@
           enable = true;
         };
       };
-      defaults = {
-        layout_config = {
-          horizontal = {
-            prompt_position = "top";
+      settings = {
+        defaults = {
+          layout_config = {
+            horizontal = {
+              prompt_position = "top";
+            };
+          };
+          sorting_strategy = "ascending";
+          mappings = {
+            i = {
+              "<esc>" = "close";
+              "<S-j>" = "move_selection_next";
+              "<S-k>" = "move_selection_previous";
+              "<C-j>" = "move_selection_next";
+              "<C-k>" = "move_selection_previous";
+            };
           };
         };
-        sorting_strategy = "ascending";
-        mappings = {
-          i = {
-            "<esc>" = "close";
-            "<S-j>" = "move_selection_next";
-            "<S-k>" = "move_selection_previous";
-            "<C-j>" = "move_selection_next";
-            "<C-k>" = "move_selection_previous";
-          };
-        };
-      };
-      extraOptions = {
         pickers = {
           buffers = {
             # sort_lastused = true;
@@ -51,99 +51,99 @@
       keymaps = {
         "<leader><space>" = {
           action = "find_files, {}";
-          desc = "Find project files";
+          options.desc = "Find project files";
         };
         "<leader>/" = {
           action = "live_grep";
-          desc = "Grep (root dir)";
+          options.desc = "Grep (root dir)";
         };
         "<leader>:" = {
           action = "command_history, {}";
-          desc = "Command History";
+          options.desc = "Command History";
         };
         "<leader>ff" = {
           action = "find_files, {}";
-          desc = "Find project files";
+          options.desc = "Find project files";
         };
         "<leader>fr" = {
           action = "oldfiles, {}";
-          desc = "Find text";
+          options.desc = "Find text";
         };
         "<leader>fR" = {
           action = "resume, {}";
-          desc = "Resume";
+          options.desc = "Resume";
         };
         "<leader>fg" = {
           action = "live_grep, {}";
-          desc = "Recent";
+          options.desc = "Recent";
         };
         "<leader>fb" = {
           action = "buffers, {}";
-          desc = "Buffers";
+          options.desc = "Buffers";
         };
         "<C-p>" = {
           action = "git_files, {}";
-          desc = "Search git files";
+          options.desc = "Search git files";
         };
         "<leader>gc" = {
           action = "git_commits, {}";
-          desc = "Commits";
+          options.desc = "Commits";
         };
         "<leader>gs" = {
           action = "git_status, {}";
-          desc = "Status";
+          options.desc = "Status";
         };
         "<leader>sa" = {
           action = "autocommands, {}";
-          desc = "Auto Commands";
+          options.desc = "Auto Commands";
         };
         "<leader>sb" = {
           action = "current_buffer_fuzzy_find, {}";
-          desc = "Buffer";
+          options.desc = "Buffer";
         };
         "<leader>sc" = {
           action = "command_history, {}";
-          desc = "Command History";
+          options.desc = "Command History";
         };
         "<leader>sC" = {
           action = "commands, {}";
-          desc = "Commands";
+          options.desc = "Commands";
         };
         "<leader>sD" = {
           action = "diagnostics, {}";
-          desc = "Workspace diagnostics";
+          options.desc = "Workspace diagnostics";
         };
         "<leader>sh" = {
           action = "help_tags, {}";
-          desc = "Help pages";
+          options.desc = "Help pages";
         };
         "<leader>sH" = {
           action = "highlights, {}";
-          desc = "Search Highlight Groups";
+          options.desc = "Search Highlight Groups";
         };
         "<leader>sk" = {
           action = "keymaps, {}";
-          desc = "Keymaps";
+          options.desc = "Keymaps";
         };
         "<leader>sM" = {
           action = "man_pages, {}";
-          desc = "Man pages";
+          options.desc = "Man pages";
         };
         "<leader>sm" = {
           action = "marks, {}";
-          desc = "Jump to Mark";
+          options.desc = "Jump to Mark";
         };
         "<leader>so" = {
           action = "vim_options, {}";
-          desc = "Options";
+          options.desc = "Options";
         };
         "<leader>sR" = {
           action = "resume, {}";
-          desc = "Resume";
+          options.desc = "Resume";
         };
         "<leader>cs" = {
           action = "colorscheme, {}";
-          desc = "Colorscheme preview";
+          options.desc = "Colorscheme preview";
         };
       };
     };
