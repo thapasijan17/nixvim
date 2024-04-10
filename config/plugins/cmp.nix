@@ -2,6 +2,7 @@
   plugins = {
     luasnip.enable = true;
     cmp-nvim-lsp = { enable = true; }; # lsp
+    cmp-nvim-lua = { enable = true; };
     cmp-buffer = { enable = true; };
     cmp-path = { enable = true; };
     cmp_luasnip = { enable = true; };
@@ -9,8 +10,12 @@
     nix.enable = true;
     cmp = {
       enable = true;
+      autoEnableSources = true;
       settings = {
-        snippet = { expand = "luasnip"; };
+        # snippet = { expand = "luasnip"; };
+        snippet = {
+          expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+        };
         experimental = {
           ghost_text = true;
         };
@@ -33,9 +38,11 @@
         };
         sources = [
         { name = "nvim_lsp"; }
+        { name = "nvim_lua"; }
+        { name = "luasnip"; }
         { name = "buffer"; }
         { name = "path"; }
-        { name = "luasnip"; }
+        { name = "crates"; }
         ];
         mapping = {
           "<Tab>" = "cmp.mapping.confirm({ select = true })";

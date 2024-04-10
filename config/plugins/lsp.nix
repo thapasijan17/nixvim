@@ -1,21 +1,27 @@
 {
   plugins = {
     nix.enable = true;
+    crates-nvim.enable = true;
+    rust-tools.enable = true;
     lsp = {
       enable = true;
       servers = {
         rust-analyzer = {
           enable = true;
-          settings = {diagnostics.enable = true;};
-          installRustc = true;
+          settings = {
+            diagnostics.enable = true;
+            # completion.postfix.enable = false; # Disable snippet suggestions because we have no snippet engine at the moment.
+          };
           installCargo = true;
+          installRustc = true;
         };
+        gdscript.enable = true;
         lua-ls.enable = true;
         yamlls.enable = true;
         nil_ls.enable = true;
         marksman.enable = true;
-        pylsp.enable = true;
-        #pyright.enable = true;
+        # pylsp.enable = true;
+        pyright.enable = true;
         bashls.enable = true;
         #ccls.enable = true;
         clangd.enable = true;
@@ -23,11 +29,11 @@
         csharp-ls.enable = true;
         gopls.enable = true;
         jsonls.enable = true;
-        terraformls = {enable = true;};
-        ansiblels.enable = true;
+        # terraformls = {enable = true;};
+        # ansiblels.enable = true;
 
         # Web development
-        # tsserver.enable = true;
+        tsserver.enable = true;
         # html.enable = true;
         # volar.enable = true;
       };
