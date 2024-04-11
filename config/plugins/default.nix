@@ -14,6 +14,7 @@
     ./lsp.nix
     ./lualine.nix
     ./lint.nix
+    ./markdown-preview.nix
     ./noice.nix
     ./nvimtree.nix
     ./telescope.nix

@@ -2,7 +2,6 @@
   plugins = {
     nix.enable = true;
     crates-nvim.enable = true;
-    rust-tools.enable = true;
     lsp = {
       enable = true;
       servers = {
