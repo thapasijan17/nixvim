@@ -1,39 +1,41 @@
 {
   colorschemes.catppuccin = {
     enable = true;
-    flavour = "macchiato";
-    background = {
-      light = "macchiato";
-      dark = "mocha";
-    };
-    terminalColors = true;
-    transparentBackground = false;
-    integrations = {
-      cmp = true;
-      noice = true;
-      notify = true;
-      neotree = true;
-      harpoon = true;
-      gitsigns = true;
-      which_key = true;
-      illuminate = {
-        enabled = true;
+    settings = {
+      flavour = "macchiato";
+      background = {
+        light = "macchiato";
+        dark = "mocha";
       };
-      treesitter = true;
-      treesitter_context = true;
-      telescope.enabled = true;
-      indent_blankline.enabled = true;
-      mini.enabled = true;
-      native_lsp = {
-        enabled = true;
-        inlay_hints = {
-          background = true;
+      terminalColors = true;
+      transparentBackground = false;
+      integrations = {
+        cmp = true;
+        noice = true;
+        notify = true;
+        neotree = true;
+        harpoon = true;
+        gitsigns = true;
+        which_key = true;
+        illuminate = {
+          enabled = true;
         };
-        underlines = {
-          errors = ["underline"];
-          hints = ["underline"];
-          information = ["underline"];
-          warnings = ["underline"];
+        treesitter = true;
+        treesitter_context = true;
+        telescope.enabled = true;
+        indent_blankline.enabled = true;
+        mini.enabled = true;
+        native_lsp = {
+          enabled = true;
+          inlay_hints = {
+            background = true;
+          };
+          underlines = {
+            errors = ["underline"];
+            hints = ["underline"];
+            information = ["underline"];
+            warnings = ["underline"];
+          };
         };
       };
     };

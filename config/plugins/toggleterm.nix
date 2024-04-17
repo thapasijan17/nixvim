@@ -20,18 +20,20 @@
   plugins = {
     toggleterm = {
       enable = true;
-      direction = "float";
-      startInInsert = true;
-      size = 12;
-      onOpen = ''
-        function()
-          vim.cmd("startinsert!")
-        end
-      '';
-      floatOpts = {
-        border = "rounded";
-        width = 155;
-        height = 35;
+      settings = {
+        direction = "float";
+        startInInsert = true;
+        size = 12;
+        onOpen = ''
+          function()
+            vim.cmd("startinsert!")
+          end
+        '';
+        floatOpts = {
+          border = "rounded";
+          width = 155;
+          height = 35;
+        };
       };
     };
   };
