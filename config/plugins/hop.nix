@@ -17,69 +17,53 @@
       x_bias = 10;
     };
   };
-  keymaps = [
+  keymaps = let
+    options = {
+      silent = true;
+      noremap = true;
+    };
+  in [
     {
       #mode = [ "" ];
       action = "<CMD>lua require('hop').hint_words()<CR>";
       key = "<leader>hw";
-      options = {
-        silent = true;
-        remap = true;
-      };
+      inherit options;
     }
     {
       #mode = [ "" ];
       action = "<CMD>lua require('hop').hint_char2()<CR>";
       key = "<leader>hc";
-      options = {
-        silent = true;
-        remap = true;
-      };
+      inherit options;
     }
     {
       #mode = [ "" ];
       action = "<CMD>lua require('hop').hint_lines_skip_whitespace()<CR>";
       key = "<leader>hl";
-      options = {
-        silent = true;
-        remap = true;
-      };
+      inherit options;
     }
     {
       #mode = [ "" ];
       action = "<CMD>lua require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR, current_line_only = true })<CR>";
-      key = "f";
-      options = {
-        silent = true;
-        remap = true;
-      };
+      key = "<leader>f";
+      inherit options;
     }
     {
       #mode = [ "" ];
       action = "<CMD>lua require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>";
-      key = "F";
-      options = {
-        silent = true;
-        remap = true;
-      };
+      key = "<leader>F";
+      inherit options;
     }
     {
       #mode = [ "" ];
       action = "<CMD>lua require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<CR>";
-      key = "t";
-      options = {
-        silent = true;
-        remap = true;
-      };
+      key = "<leader>t";
+      inherit options;
     }
     {
       #mode = [ "" ];
       action = "<CMD>lua require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<CR>";
-      key = "T";
-      options = {
-        silent = true;
-        remap = true;
-      };
+      key = "<leader>T";
+      inherit options;
     }
   ];
 }

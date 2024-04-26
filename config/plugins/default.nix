@@ -1,7 +1,8 @@
 {
   # Import all your configuration modules here
   imports = [
-    #./alpha.nix
+    ./alpha.nix
+    # ./alpha-lua.nix
     ./bufferline.nix
     ./cmp.nix
     ./cmake.nix

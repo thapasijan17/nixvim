@@ -5,7 +5,7 @@
       layout = [
         {
           type = "padding";
-          val = 2;
+          val = 4;
         }
         {
           type = "text";
@@ -37,62 +37,72 @@
             mkButton = shortcut: cmd: val: {
               type = "button";
               inherit val;
-              on_press.raw = "funcion() vim.cmd[[${cmd}]] end";
+              on_press.raw = cmd;
               opts = {
                 keymap = [
                   "n"
-                  shortcut
+                  "<leader>${shortcut}"
                   cmd
+                  # {}
                   {
                     noremap = true;
                     silent = true;
                     nowait = true;
+                    desc = val;
                   }
                 ];
-                shortcut = shortcut;
+                shortcut = "SPC ${shortcut}";
                 position = "center";
                 cursor = 3;
                 width = 40;
                 align_shortcut = "right";
-                hl = "AlphaButtons";
+                # hl = "AlphaButtons";
+                hl_shortcut = "Keyword";
               };
             };
           in [
             (
               mkButton
               "ff"
-              ":Telescope find_files <CR>"
+              "<CMD>lua require('telescope.builtin').find_files()<CR>"
               "󰈞  Find file"
             )
             (
               mkButton
               "fn"
-              ":ene <BAR> startinsert <CR>"
+              ":ene <BAR> startinsert<CR>"
               "  New file"
             )
             (
               mkButton
               "fr"
-              ":Telescope oldfiles <CR>"
+              "<CMD>lua require('telescope.builtin').oldfiles()<CR>"
               "󰊄  Recently used files"
             )
             (
               mkButton
               "fg"
-              ":Telescope live_grep <CR>"
+              "<CMD>lua require('telescope.builtin').live_grep()<CR>"
               "󰈬  Live grep"
             )
             (
               mkButton
               "cf"
-              ":e /etc/nixos/flake.nix<CR>"
+              "<CMD>e ~/NixOS/<CR>"
               "  Configuration"
             )
+            # (
+            #   mkButton
+            #   "rs"
+            #   "<CMD>lua require('persistence').load()<CR>"
+            #   "  Restore Session"
+            # )
             (
               mkButton
               "qn"
-              ":qa<CR>"
-              "󰅚  Quit Neovim"
+              "<CMD>qa<CR>"
+              "  Quit Neovim"
+              # "󰅚  Quit Neovim"
             )
           ];
         }
@@ -105,7 +115,8 @@
           val = "Better than neovim.";
           opts = {
             position = "center";
-            hl = "Keyword";
+            # hl = "Keyword";
+            hl = "AlphaButtons";
           };
         }
       ];

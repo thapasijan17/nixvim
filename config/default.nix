@@ -19,6 +19,12 @@
   # Misc plugins
   plugins = {
     tmux-navigator.enable = true;
+    zellij = {
+      enable = true;
+      settings = {
+        vimTmuxNavigatorKeybinds = true;
+      };
+    };
     nvim-autopairs.enable = true;
     lastplace.enable = true;
     # surround.enable = true;
@@ -32,7 +38,7 @@
     };
   };
   extraPackages = with pkgs; [
-    ripgrep
+    # ripgrep
     tmux-sessionizer
     # Formatters
     alejandra
