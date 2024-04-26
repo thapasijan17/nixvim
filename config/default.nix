@@ -18,6 +18,7 @@
 
   # Misc plugins
   plugins = {
+    tmux-navigator.enable = true;
     nvim-autopairs.enable = true;
     lastplace.enable = true;
     # surround.enable = true;
