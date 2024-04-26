@@ -34,10 +34,15 @@
           };
           type = "group";
           val = let
-            mkButton = shortcut: cmd: val: {
+            mkButton = shortcut: val: cmd: on_press: {
               type = "button";
               inherit val;
-              on_press.raw = cmd;
+              on_press.__raw = ''
+                function()
+                  local keys = vim.api.nvim_replace_termcodes('<leader>${shortcut}', true, false, true)
+                  vim.api.nvim_feedkeys(keys, 'm', false)
+                end
+              '';
               opts = {
                 keymap = [
                   "n"
@@ -64,44 +69,51 @@
             (
               mkButton
               "ff"
-              "<CMD>lua require('telescope.builtin').find_files()<CR>"
               "󰈞  Find file"
+              "<CMD>lua require('telescope.builtin').find_files()<CR>"
+              "require('telescope.builtin').find_files()"
             )
             (
               mkButton
               "fn"
-              ":ene <BAR> startinsert<CR>"
               "  New file"
+              ":ene <BAR> startinsert<CR>"
+              "vim.cmd(\"ene | startinsert\")"
             )
             (
               mkButton
               "fr"
-              "<CMD>lua require('telescope.builtin').oldfiles()<CR>"
               "󰊄  Recently used files"
+              "<CMD>lua require('telescope.builtin').oldfiles()<CR>"
+              "require('telescope.builtin').oldfiles()"
             )
             (
               mkButton
               "fg"
-              "<CMD>lua require('telescope.builtin').live_grep()<CR>"
               "󰈬  Live grep"
+              "<CMD>lua require('telescope.builtin').live_grep()<CR>"
+              "require('telescope.builtin').live_grep()"
             )
             (
               mkButton
               "cf"
-              "<CMD>e ~/NixOS/<CR>"
               "  Configuration"
+              "<CMD>e ~/NixOS/<CR>"
+              "vim.cmd(\"e ~/NixOS/\")"
             )
             # (
             #   mkButton
             #   "rs"
-            #   "<CMD>lua require('persistence').load()<CR>"
             #   "  Restore Session"
+            #   "<CMD>lua require('persistence').load()<CR>"
+            #   "require('persistence').load()"
             # )
             (
               mkButton
               "qn"
-              "<CMD>qa<CR>"
               "  Quit Neovim"
+              "<CMD>qa<CR>"
+              "vim.cmd(\"qa\")"
               # "󰅚  Quit Neovim"
             )
           ];

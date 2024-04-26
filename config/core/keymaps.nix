@@ -74,5 +74,39 @@
         desc = "Delete buffer";
       };
     }
+
+    # Move text up and down
+    {
+      mode = "n";
+      key = "<A-k>";
+      action = "<CMD>m .-2<CR>==";
+      options = {
+        desc = "Move text up";
+      };
+    }
+    {
+      mode = "v";
+      key = "<A-k>";
+      action = "<CMD>m '<-2<CR>gv=gv";
+      options = {
+        desc = "Move text up";
+      };
+    }
+    {
+      mode = "n";
+      key = "<A-j>";
+      action = "<CMD>m .+1<CR>==";
+      options = {
+        desc = "Move text up";
+      };
+    }
+    {
+      mode = "v";
+      key = "<A-j>";
+      action = "<CMD>m '>+1<CR>gv=gv";
+      options = {
+        desc = "Move text up";
+      };
+    }
   ];
 }
