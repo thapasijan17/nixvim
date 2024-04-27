@@ -14,6 +14,14 @@
       enable = true;
       autoClose = false;
       openOnSetup = true;
+
+      syncRootWithCwd = false;
+      respectBufCwd = false;
+      updateFocusedFile = {
+        enable = true;
+        updateRoot = true;
+      };
+      git.enable = true;
       actions = {
         openFile.quitOnOpen = true;
       };

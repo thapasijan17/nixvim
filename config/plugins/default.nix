@@ -19,6 +19,7 @@
     ./noice.nix
     ./nvimtree.nix
     ./telescope.nix
+    ./project.nix
     ./toggleterm.nix
     ./treesitter.nix
   ];
