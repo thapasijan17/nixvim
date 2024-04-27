@@ -77,6 +77,7 @@
               mkButton
               "fn"
               "  New file"
+              # "  New file"
               ":ene <BAR> startinsert<CR>"
               "vim.cmd(\"ene | startinsert\")"
             )
@@ -94,26 +95,26 @@
               "<CMD>lua require('telescope.builtin').live_grep()<CR>"
               "require('telescope.builtin').live_grep()"
             )
-            (
-              mkButton
-              "cf"
-              "  Configuration"
-              "<CMD>e ~/NixOS/<CR>"
-              "vim.cmd(\"e ~/NixOS/\")"
-            )
             # (
             #   mkButton
-            #   "rs"
-            #   "  Restore Session"
-            #   "<CMD>lua require('persistence').load()<CR>"
-            #   "require('persistence').load()"
+            #   "cf"
+            #   "  Configuration"
+            #   "<CMD>e ~/NixOS/<CR>"
+            #   "vim.cmd(\"e ~/NixOS/\")"
             # )
             (
               mkButton
-              "qn"
-              "  Quit Neovim"
-              "<CMD>qa<CR>"
-              "vim.cmd(\"qa\")"
+              "rs"
+              "  Restore last session"
+              "<CMD>lua require('persistence').load()<CR>"
+              "require('persistence').load()"
+            )
+            (
+              mkButton
+              "qq"
+              "  Quit neovim"
+              "<CMD>quitall<CR><esc>"
+              "vim.cmd(\"quitall\")"
               # "󰅚  Quit Neovim"
             )
           ];

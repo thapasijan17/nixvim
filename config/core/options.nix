@@ -30,13 +30,13 @@
 
     # Much better completions
     updatetime = 50;
-    completeopt = [ "menuone" "noselect" "noinsert" ];
+    completeopt = ["menuone" "noselect" "noinsert"];
 
     # swapfile = false;
     # backup = false;
     undofile = true;
 
-    # Enable 24-bit colors 
+    # Enable 24-bit colors
     termguicolors = true;
 
     signcolumn = "yes";
@@ -54,17 +54,17 @@
     # Always keep 8 lines above/below cursor unless at start/end of file
     scrolloff = 8;
 
-    # Place a column line
-    # colorcolumn = "80";
-
     # Reduce which-key timeout to 10ms
-    timeoutlen = 10;
+    timeoutlen = 250;
 
     # Set encoding type
     encoding = "utf-8";
     fileencoding = "utf-8";
 
-    # cmdheight = 0;
+    # Experimental
+    # cmdheight = 2; # 0
     # showmode = false;
+    # pumheight = 0;
+    # colorcolumn = "80"; # Place a column line
   };
 }

@@ -11,6 +11,22 @@
     }
     {
       mode = "n";
+      key = "<C-s>";
+      action = "<CMD>w<CR>";
+      options = {
+        desc = "Save file";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>qq";
+      action = "<CMD>quitall<CR>";
+      options = {
+        desc = "Quit all";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>fy";
       action = "<CMD> %y <CR>";
       options = {
@@ -69,7 +85,7 @@
     {
       mode = "n";
       key = "<leader>bd";
-      action = "<cmd>bdelete<cr>";
+      action = "<CMD>bdelete<CR>";
       options = {
         desc = "Delete buffer";
       };
@@ -85,7 +101,15 @@
       };
     }
     {
-      mode = "v";
+      mode = "n";
+      key = "<A-j>";
+      action = "<CMD>m .+1<CR>==";
+      options = {
+        desc = "Move text down";
+      };
+    }
+    {
+      mode = ["v" "x"];
       key = "<A-k>";
       action = "<CMD>m '<-2<CR>gv=gv";
       options = {
@@ -93,19 +117,27 @@
       };
     }
     {
-      mode = "n";
+      mode = ["v" "x"];
       key = "<A-j>";
-      action = "<CMD>m .+1<CR>==";
+      action = "<CMD>m '>+1<CR>gv=gv";
+      options = {
+        desc = "Move text down";
+      };
+    }
+    {
+      mode = "x";
+      key = "K";
+      action = "<CMD>m '<-2<CR>gv=gv";
       options = {
         desc = "Move text up";
       };
     }
     {
-      mode = "v";
-      key = "<A-j>";
+      mode = "x";
+      key = "J";
       action = "<CMD>m '>+1<CR>gv=gv";
       options = {
-        desc = "Move text up";
+        desc = "Move text down";
       };
     }
   ];

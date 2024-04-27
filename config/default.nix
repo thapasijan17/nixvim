@@ -18,6 +18,23 @@
 
   # Misc plugins
   plugins = {
+    persistence = {
+      enable = true;
+      options = [
+        "buffers"
+        "globals"
+        "terminal"
+        "curdir"
+        "tabpages"
+        "resize"
+        "winsize"
+        "winpos"
+        "skiprtp"
+      ];
+    };
+    lastplace.enable = true;
+    nvim-autopairs.enable = true;
+    markdown-preview.enable = true;
     tmux-navigator.enable = true;
     zellij = {
       enable = true;
@@ -25,18 +42,20 @@
         vimTmuxNavigatorKeybinds = true;
       };
     };
-    nvim-autopairs.enable = true;
-    lastplace.enable = true;
-    # surround.enable = true;
-    # commentary.enable = true;
-    which-key = {
+    better-escape = {
       enable = true;
+      clearEmptyLines = true;
+      timeout = 200;
+    };
+    which-key = {
+      enable = false; # If you want to enable then change timeoutLen to 10 in core/options.nix for better performance
       showKeys = true;
     };
-    markdown-preview = {
-      enable = true;
-    };
   };
+  extraPlugins = with pkgs.vimPlugins; [
+    vim-be-good
+    nui-nvim
+  ];
   extraPackages = with pkgs; [
     # ripgrep
     tmux-sessionizer
