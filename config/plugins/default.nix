@@ -2,13 +2,13 @@
   # Import all your configuration modules here
   imports = [
     ./alpha.nix
-    # ./alpha-lua.nix
     ./bufferline.nix
     ./cmp.nix
     ./cmake.nix
     ./comment.nix
     ./cursorline.nix
     ./dap.nix
+    # ./flash.nix
     ./format.nix
     ./git.nix
     ./hop.nix
@@ -18,7 +18,9 @@
     ./markdown-preview.nix
     ./noice.nix
     ./nvimtree.nix
+    ./statuscol.nix
     ./telescope.nix
+    ./ufo.nix
     ./project.nix
     ./toggleterm.nix
     ./treesitter.nix

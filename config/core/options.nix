@@ -27,6 +27,7 @@
     smartcase = true;
     grepprg = "rg --vimgrep";
     grepformat = "%f:%l:%c:%m";
+    fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:";
 
     # Much better completions
     updatetime = 50;
@@ -46,7 +47,7 @@
     # Set fold settings
     # These options were reccommended by nvim-ufo
     # See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
-    foldcolumn = "0";
+    foldcolumn = "1";
     foldlevel = 99;
     foldlevelstart = 99;
     foldenable = true;
@@ -60,6 +61,8 @@
     # Set encoding type
     encoding = "utf-8";
     fileencoding = "utf-8";
+
+    sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
 
     # Experimental
     # cmdheight = 2; # 0

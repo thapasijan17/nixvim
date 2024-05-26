@@ -20,16 +20,33 @@
   plugins = {
     persistence = {
       enable = true;
+      saveEmpty = true;
+      preSave = ''
+        function()
+          -- remove dir buffers and buffers whose files are located outside of cwd
+          local cwd = vim.fn.getcwd() .. '/'
+          for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+            local bufpath = vim.api.nvim_buf_get_name(buf) .. '/'
+            if not bufpath:match('^' .. vim.pesc(cwd)) then
+              vim.api.nvim_buf_delete(buf, {})
+            end
+          end
+        end'';
       options = [
         "buffers"
-        "globals"
-        "terminal"
         "curdir"
         "tabpages"
-        "resize"
         "winsize"
-        "winpos"
         "skiprtp"
+        "winpos"
+        "terminal"
+        "folds"
+        "resize"
+        "globals"
+        "options"
+        "localoptions"
+        "sesdir"
+        "help"
       ];
     };
     lastplace.enable = true;

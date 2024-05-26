@@ -12,8 +12,8 @@
   plugins = {
     nvim-tree = {
       enable = true;
-      autoClose = false;
-      openOnSetup = true;
+      # autoClose = false;
+      # openOnSetup = true;
 
       syncRootWithCwd = false;
       respectBufCwd = false;

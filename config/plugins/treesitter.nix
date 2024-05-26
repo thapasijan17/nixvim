@@ -3,9 +3,11 @@
     treesitter-context = {enable = false;};
     treesitter = {
       enable = true;
+      nixvimInjections = true;
+      incrementalSelection.enable = true;
       nixGrammars = true;
       indent = true;
-      #folding = true;
+      folding = false;
       ensureInstalled = [
         "bash"
         "c"
