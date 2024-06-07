@@ -17,7 +17,7 @@
         gdscript.enable = true;
         lua-ls.enable = true;
         yamlls.enable = true;
-        nil_ls.enable = true;
+        nil-ls.enable = true;
         marksman.enable = true;
         # pylsp.enable = true;
         pyright.enable = true;
