@@ -59,19 +59,28 @@
   ];
   plugins.bufferline = {
     enable = true;
-    separatorStyle = "thin"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
-    offsets = [ { filetype = "NvimTree"; text = "File Explorer"; text_align = "left"; } ];
-    indicator.icon = "▎";
-    modifiedIcon = "●";
-    bufferCloseIcon = "";
-    closeIcon = "";
-    leftTruncMarker = "";
-    rightTruncMarker = "";
-    numbers = "ordinal";
-    tabSize = 21;
-    diagnostics = true;
-    diagnosticsUpdateInInsert = false;
-    showBufferIcons = true;
-    showBufferCloseIcons = false;
+    settings = {
+      options = {
+        offsets = [
+          {
+            filetype = "NvimTree";
+            text = "File Explorer";
+            text_align = "left";
+          }
+        ];
+        separator_style = "thin"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
+        indicator.icon = "▎";
+        modified_icon = "●";
+        buffer_close_icon = "";
+        close_icon = "";
+        left_trunc_marker = "";
+        right_trunc_marker = "";
+        numbers = "ordinal";
+        tab_size = 21;
+        # diagnostics = "nvim_lsp";
+        show_buffer_icons = true;
+        show_buffer_close_icons = false;
+      };
+    };
   };
 }

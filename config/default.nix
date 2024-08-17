@@ -61,12 +61,11 @@
     };
     better-escape = {
       enable = true;
-      clearEmptyLines = true;
-      timeout = 200;
+      settings.timeout = 200;
     };
     which-key = {
       enable = false; # If you want to enable then change timeoutLen to 10 in core/options.nix for better performance
-      showKeys = true;
+      settings.show_keys = true;
     };
   };
   extraPlugins = with pkgs.vimPlugins; [
