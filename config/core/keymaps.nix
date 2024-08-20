@@ -2,6 +2,14 @@
   keymaps = [
     # Useful keymaps
     {
+      mode = "v";
+      key = "p";
+      action = "\"_dP";
+      options = {
+        desc = "Paste over currently selected text without yanking it";
+      };
+    }
+    {
       mode = "n";
       key = "<leader>sr";
       action = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>";
