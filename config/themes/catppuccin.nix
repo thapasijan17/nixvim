@@ -2,13 +2,13 @@
   colorschemes.catppuccin = {
     enable = true;
     settings = {
-      flavour = "macchiato";
+      flavour = "mocha";
       background = {
-        light = "macchiato";
+        light = "latte";
         dark = "mocha";
       };
-      terminalColors = true;
-      transparentBackground = false;
+      term_colors = true;
+      transparent_background = false;
       integrations = {
         cmp = true;
         noice = true;
