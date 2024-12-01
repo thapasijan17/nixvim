@@ -8,7 +8,7 @@
         dark = "mocha";
       };
       term_colors = true;
-      transparent_background = false;
+      transparent_background = true;
       integrations = {
         cmp = true;
         noice = true;

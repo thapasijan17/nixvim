@@ -46,7 +46,9 @@
         ];
         mapping = {
           "<Tab>" = "cmp.mapping.confirm({ select = true })";
-          "<C-o>" = "cmp.mapping.complete()";
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<S-CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+          "<C-Space>" = "cmp.mapping.complete()";
           "<C-j>" = "cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })";
           "<C-k>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
         };

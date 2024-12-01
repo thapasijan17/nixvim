@@ -49,6 +49,7 @@
         "help"
       ];
     };
+    web-devicons.enable = true;
     lastplace.enable = true;
     nvim-autopairs.enable = true;
     markdown-preview.enable = true;
@@ -106,7 +107,7 @@
     # eslint_d
     golangci-lint
     hadolint
-    html-tidy
+    # html-tidy
     luajitPackages.luacheck
     markdownlint-cli
     nodePackages.jsonlint

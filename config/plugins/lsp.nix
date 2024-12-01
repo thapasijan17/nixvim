@@ -5,7 +5,7 @@
     lsp = {
       enable = true;
       servers = {
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           settings = {
             diagnostics.enable = true;
@@ -14,10 +14,10 @@
           installCargo = true;
           installRustc = true;
         };
-        gdscript.enable = true;
-        lua-ls.enable = true;
+        # gdscript.enable = true;
+        lua_ls.enable = true;
         yamlls.enable = true;
-        nil-ls.enable = true;
+        nil_ls.enable = true;
         marksman.enable = true;
         # pylsp.enable = true;
         pyright.enable = true;
@@ -25,16 +25,14 @@
         #ccls.enable = true;
         clangd.enable = true;
         cmake.enable = true;
-        csharp-ls.enable = true;
+        csharp_ls.enable = true;
         gopls.enable = true;
         jsonls.enable = true;
-        # terraformls = {enable = true;};
-        # ansiblels.enable = true;
-
-        # Web development
-        tsserver.enable = true;
+        ts_ls.enable = true;
         # html.enable = true;
         # volar.enable = true;
+        # terraformls = {enable = true;};
+        # ansiblels.enable = true;
       };
       keymaps = {
         silent = true;
