@@ -1,36 +1,36 @@
-{
+{pkgs, ...}: {
   plugins = {
-    treesitter-context = {enable = false;};
+    treesitter-context = {enable = true;};
     treesitter = {
       enable = true;
       nixvimInjections = true;
       nixGrammars = true;
       folding = false;
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        nix
+        org
+        bash
+        cmake
+        make
+        python
+        rust
+        c
+        c_sharp
+        cpp
+        regex
+        gitcommit
+        gitignore
+        markdown
+        markdown_inline
+        json
+        lua
+        toml
+        yaml
+        zig
+      ];
       settings = {
         incremental_selection.enable = true;
         indent.enable = true;
-        ensure_installed = [
-          "bash"
-          "c"
-          "c_sharp"
-          "cmake"
-          "cpp"
-          "gitcommit"
-          "gitignore"
-          "lua"
-          "make"
-          "markdown"
-          "markdown_inline"
-          "nix"
-          "org"
-          "python"
-          "regex"
-          "rust"
-          "toml"
-          "vim"
-          "yaml"
-          "zig"
-        ];
       };
     };
   };
