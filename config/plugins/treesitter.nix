@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   plugins = {
-    treesitter-context = {enable = true;};
+    treesitter-context = {enable = false;};
     treesitter = {
       enable = true;
       nixvimInjections = true;
