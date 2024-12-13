@@ -49,6 +49,7 @@
         "help"
       ];
     };
+    direnv.enable = true;
     web-devicons.enable = true;
     lastplace.enable = true;
     nvim-autopairs.enable = true;
