@@ -1,38 +1,17 @@
 {
-  keymaps = [
-    {
-      mode = "n";
-      key = "<M-f>";
-      action = "<CMD>lua require('toggleterm').toggle()<CR>";
-      options = {
-        desc = "Open";
-      };
-    }
-    {
-      mode = "t";
-      key = "<M-f>";
-      action = "<C-\\><C-n><CMD>lua require('toggleterm').toggle()<CR>";
-      options = {
-        desc = "Close";
-      };
-    }
-  ];
   plugins = {
     toggleterm = {
       enable = true;
       settings = {
-        direction = "float";
-        startInInsert = true;
+        direction = "float"; # float, horizontal, vertical, tab
+        start_in_insert = true;
+        open_mapping = "[[<M-f>]]";
+        autochdir = true;
         size = 12;
-        onOpen = ''
-          function()
-            vim.cmd("startinsert!")
-          end
-        '';
-        floatOpts = {
+        float_opts = {
           border = "rounded";
-          width = 155;
-          height = 35;
+          width = 150; # 155
+          height = 33; # 35
         };
       };
     };

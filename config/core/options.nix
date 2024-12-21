@@ -57,12 +57,13 @@
 
     # Reduce which-key timeout to 10ms
     timeoutlen = 250;
+    # ttimeoutlen = 20;
 
     # Set encoding type
     encoding = "utf-8";
     fileencoding = "utf-8";
 
-    sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
+    sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
 
     # Experimental
     # cmdheight = 2; # 0

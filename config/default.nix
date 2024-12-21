@@ -95,12 +95,12 @@
     # Debuggers / misc deps
     asm-lsp
     bashdb
-    clang-tools
+    # clang-tools
     delve
     fd
     gdb
     go
-    lldb_17
+    # lldb_17
     llvmPackages_17.bintools-unwrapped
     marksman
     # Linters

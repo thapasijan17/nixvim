@@ -1,7 +1,7 @@
 {
   plugins = {
     nix.enable = true;
-    crates-nvim.enable = true;
+    crates.enable = true;
     lsp = {
       enable = true;
       servers = {

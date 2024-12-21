@@ -4,7 +4,7 @@
     ./alpha.nix
     ./bufferline.nix
     ./cmp.nix
-    ./cmake.nix
+    # ./cmake.nix
     ./comment.nix
     ./cursorline.nix
     ./dap.nix

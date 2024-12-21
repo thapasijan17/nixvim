@@ -1,12 +1,12 @@
 {
   plugins = {
     luasnip.enable = true;
-    cmp-nvim-lsp = { enable = true; }; # lsp
-    cmp-nvim-lua = { enable = true; };
-    cmp-buffer = { enable = true; };
-    cmp-path = { enable = true; };
-    cmp_luasnip = { enable = true; };
-    cmp-cmdline = { enable = false; };
+    cmp-nvim-lsp = {enable = true;}; # lsp
+    cmp-nvim-lua = {enable = true;};
+    cmp-buffer = {enable = true;};
+    cmp-path = {enable = true;};
+    cmp_luasnip = {enable = true;};
+    cmp-cmdline = {enable = false;};
     nix.enable = true;
     cmp = {
       enable = true;
@@ -25,7 +25,7 @@
           maxViewEntries = 30;
         };
         formatting = {
-          fields = [ "kind" "abbr" "menu" ];
+          fields = ["kind" "abbr" "menu"];
         };
         window = {
           completion = {
@@ -37,12 +37,12 @@
           };
         };
         sources = [
-        { name = "nvim_lsp"; }
-        { name = "nvim_lua"; }
-        { name = "luasnip"; }
-        { name = "buffer"; }
-        { name = "path"; }
-        { name = "crates"; }
+          {name = "nvim_lsp";}
+          {name = "nvim_lua";}
+          {name = "luasnip";}
+          {name = "buffer";}
+          {name = "path";}
+          {name = "crates";}
         ];
         mapping = {
           "<Tab>" = "cmp.mapping.confirm({ select = true })";
