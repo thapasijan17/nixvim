@@ -1,4 +1,8 @@
 {
+  extraConfigLua = ''
+    vim.keymap.set("n", "<leader>gg", function() vim.cmd("silent !tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit") end, { desc = "Lazygit" })
+    vim.keymap.set("n", "<leader>ac", function() vim.cmd("silent !tmux split-window -p 42 -v -c " .. vim.fn.getcwd()) end, { desc = "Vertical Tmux Split" })
+  '';
   keymaps = [
     # Useful keymaps
     {
