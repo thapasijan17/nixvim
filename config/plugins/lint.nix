@@ -21,9 +21,10 @@
       yaml = ["yamllint"];
     };
     linters = {
-      write_good = {
-        cmd = "${pkgs.write-good}/bin/write-good";
-      };
+      # Not working currently:
+      # write_good = {
+      #   cmd = "${pkgs.write-good}/bin/write-good";
+      # };
     };
   };
   extraConfigLua = ''

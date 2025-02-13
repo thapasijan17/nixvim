@@ -63,7 +63,7 @@
     encoding = "utf-8";
     fileencoding = "utf-8";
 
-    sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
+    sessionoptions = "blank,buffers,curdir,folds,globals,help,options,tabpages,winsize,winpos,terminal,localoptions";
 
     # Experimental
     # cmdheight = 2; # 0

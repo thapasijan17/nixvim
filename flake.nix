@@ -3,11 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs = {
+    nixpkgs-stable,
     nixvim,
     flake-parts,
     ...
@@ -36,10 +38,25 @@
           };
         };
         nvim = nixvim'.makeNixvimWithModule nixvimModule;
+
       in {
         checks = {
           # Run `nix flake check .` to verify that your config is not broken
           default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+        };
+
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [
+            (_final: _prev: {
+              stable = import nixpkgs-stable {
+                inherit system;
+                config.allowUnfree = true;
+                config.nvidia.acceptLicense = true;
+              };
+            })
+          ];
+          config = {};
         };
 
         packages = {

@@ -2,44 +2,44 @@
   extraPlugins = with pkgs.vimPlugins; [
     nvim-gdb
   ];
-  plugins.dap = {
-    enable = true;
-    signs = {
-      dapBreakpoint = {
-        text = "●";
-        texthl = "DapBreakpoint";
-      };
-      dapBreakpointCondition = {
-        text = "●";
-        texthl = "DapBreakpointCondition";
-      };
-      dapLogPoint = {
-        text = "◆";
-        texthl = "DapLogPoint";
-      };
-    };
-    extensions = {
-      dap-ui = {
-        enable = true;
-        floating.mappings = {
-          close = ["<ESC>" "q"];
+  plugins = {
+    dap = {
+      enable = true;
+      signs = {
+        dapBreakpoint = {
+          text = "●";
+          texthl = "DapBreakpoint";
+        };
+        dapBreakpointCondition = {
+          text = "●";
+          texthl = "DapBreakpointCondition";
+        };
+        dapLogPoint = {
+          text = "◆";
+          texthl = "DapLogPoint";
         };
       };
-      dap-virtual-text.enable = true;
-      dap-go.enable = true;
-      dap-python.enable = true;
+      configurations = {
+        java = [
+          {
+            type = "java";
+            request = "launch";
+            name = "Debug (Attach) - Remote";
+            hostName = "127.0.0.1";
+            port = 5005;
+          }
+        ];
+      };
     };
-    configurations = {
-      java = [
-        {
-          type = "java";
-          request = "launch";
-          name = "Debug (Attach) - Remote";
-          hostName = "127.0.0.1";
-          port = 5005;
-        }
-      ];
+    dap-go.enable = true;
+    dap-python.enable = true;
+    dap-ui = {
+      enable = true;
+      settings.floating.mappings = {
+        close = ["<ESC>" "q"];
+      };
     };
+    dap-virtual-text.enable = true;
   };
   # Testing
   # keymaps = [
@@ -135,7 +135,7 @@
       }
       dap.adapters.lldb = {
           type = 'executable',
-          command = '${pkgs.lldb_17}/bin/lldb-vscode', -- adjust as needed, must be absolute path
+          command = '${pkgs.stable.lldb}/bin/lldb-dap', -- adjust as needed, must be absolute path
           name = 'lldb'
       }
 
@@ -143,7 +143,7 @@
         type = 'server',
         port = "''${port}",
         executable = {
-          command = '${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb',
+          command = '${pkgs.stable.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb',
           args = {"--port", "''${port}"},
 
           -- On windows you may have to uncomment this:
