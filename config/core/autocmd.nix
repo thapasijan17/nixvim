@@ -27,11 +27,10 @@
       };
     }
     {
-      event = "TermEnter";
+      event = ["TermOpen" "TermEnter"];
       group = "terminal_settings";
-      callback = {
-        __raw = ''function() vim.cmd("startinsert") end'';
-      };
+      pattern = "term://*";
+      command = "startinsert!";
     }
     {
       event = "Filetype";

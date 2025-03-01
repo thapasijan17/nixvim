@@ -57,33 +57,33 @@
 
     # Window navigation
     {
-      mode = "n";
+      mode = ["n" "t"];
       key = "<C-k>";
-      action = "<C-w><C-k>";
+      action = "<Cmd>wincmd k<CR>";
       options = {
         desc = "Cycle to top window";
       };
     }
     {
-      mode = "n";
+      mode = ["n" "t"];
       key = "<C-j>";
-      action = "<C-w><C-j><CMD>startinsert<CR>";
+      action = "<Cmd>wincmd j<CR>";
       options = {
         desc = "Cycle to bottom window";
       };
     }
     {
-      mode = "n";
+      mode = ["n" "t"];
       key = "<C-l>";
-      action = "<C-w><C-l>";
+      action = "<Cmd>wincmd l<CR>";
       options = {
         desc = "Cycle to right window";
       };
     }
     {
-      mode = "n";
+      mode = ["n" "t"];
       key = "<C-h>";
-      action = "<C-w><C-h>";
+      action = "<Cmd>wincmd h<CR>";
       options = {
         desc = "Cycle to left window";
       };
